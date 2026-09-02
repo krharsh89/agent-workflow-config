@@ -5,7 +5,7 @@ workflow:
   objective: Prioritize unresolved customer requests for human support teams.
   model_tier: standard
   credit_window: daily
-  credit_limit: 500
+  credit_limit: 1000
 
 execution_controls:
   human_approval_required: true
