@@ -1,0 +1,13 @@
+schema_version: 1
+workflow:
+  id: customer-support-triage
+  owner: customer-experience
+  objective: Prioritize unresolved customer requests for human support teams.
+  model_tier: standard
+  credit_window: daily
+  credit_limit: 500
+
+execution_controls:
+  human_approval_required: true
+  audit_receipt_required: true
+  production_status: active
