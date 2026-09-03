@@ -15,7 +15,7 @@ export async function confirmAuthorization({ origin, credential, notificationId,
       if ([409, 429, 502, 503, 504].includes(response.status) && attempt < 2) { await pause(1000 * (attempt + 1)); continue; }
       if (!response.ok) {
         const value = await response.json().catch(() => null);
-        const code = typeof value?.error === "string" && /^GITHUB_IDENTITY_(TOKEN|KEYS|SIGNATURE|AUDIENCE|TIME|WORKFLOW|RUN)$/.test(value.error) ? ` ${value.error}` : "";
+        const code = typeof value?.error === "string" && /^GITHUB_IDENTITY_(TOKEN|KEYS|KEY_FETCH|KEY_FORMAT|KEY_MATCH|KEY_HTTP_[1-5][0-9]{2}|SIGNATURE|AUDIENCE|TIME|WORKFLOW|RUN)$/.test(value.error) ? ` ${value.error}` : "";
         throw new Error(`RuleRipple confirmation rejected (${response.status}, ${method}).${code}`);
       }
       return response.json();
