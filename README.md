@@ -4,12 +4,18 @@ Version-controlled operating limits and approval metadata for AI workflows.
 
 ## Purpose
 
-This repository keeps consequential workflow settings reviewable in Git. Each workflow declares an owner, operating objective, credit limit, and execution controls. Changes are proposed through pull requests so policy systems and human reviewers can evaluate them before they become active.
+Each workflow declares an owner, operating objective, credit limit and execution controls. Changes are proposed through pull requests so policy systems and human reviewers can evaluate them before merge.
 
-## Current workflow
+## Configuration
 
-`workflows/customer-support-triage.yaml` configures an AI-assisted customer-support triage workflow. Its credit limit bounds the work it may perform during one operating window.
+Workflow configurations live under `workflows/`. The support configuration is `workflows/customer-support-triage.json`. Its daily authorization is the numeric field `/workflow/credit_limit`.
 
 ## Change contract
 
-Pull requests declare the operational inputs needed for policy evaluation: business criticality, execution readiness, urgency, workflow type, approval state, requested credits, and minimum useful allocation. Those declarations are reviewed alongside the exact commit being proposed.
+Pull requests declare business criticality, execution readiness, urgency, workflow type, execution eligibility, requested credits and minimum useful allocation in a Policy intake section. For JSON budget binding, total mode authorizes the full proposed limit; increase mode authorizes only a verified numeric increase. A merge must be funded in full.
+
+Declared execution eligibility is not the RuleRipple approval. The policy checkpoint authorizes the exact source head and amount separately.
+
+## Execution boundary
+
+Merging changes repository configuration. This repository does not launch an AI worker, enforce a provider account limit or measure token usage. A consuming runtime must load the approved configuration and report actual usage separately. Credits here are an internal authorization unit, not a GitHub charge.
