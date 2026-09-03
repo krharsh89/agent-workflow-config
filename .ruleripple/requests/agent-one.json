@@ -1,0 +1,23 @@
+{
+  "requests": [
+    {
+      "submission_id": "support-capacity-check-20260903-01",
+      "source": {
+        "system": "github",
+        "external_id": "krharsh89/agent-workflow-config:capacity-check:support:20260903-01"
+      },
+      "name": "Support triage capacity check",
+      "reason": "Owner-approved intake test: request 400 credits with a 400-credit minimum to verify independent delivery and shared-budget priority. Test inputs only; no external execution or measured usage.",
+      "resource_id": "credits",
+      "requested": 400,
+      "minimum": 400,
+      "values": {
+        "criticality": 5,
+        "readiness": 9,
+        "urgency": "high",
+        "workflowType": "customer",
+        "approved": true
+      }
+    }
+  ]
+}

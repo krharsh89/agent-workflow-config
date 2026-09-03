@@ -1,0 +1,23 @@
+{
+  "requests": [
+    {
+      "submission_id": "research-capacity-check-20260903-01",
+      "source": {
+        "system": "github",
+        "external_id": "krharsh89/agent-workflow-config:capacity-check:research:20260903-01"
+      },
+      "name": "Research evaluation capacity check",
+      "reason": "Owner-approved intake test: request 400 credits with a 400-credit minimum to verify independent delivery and shared-budget contention. Test inputs only; no external execution or measured usage.",
+      "resource_id": "credits",
+      "requested": 400,
+      "minimum": 400,
+      "values": {
+        "criticality": 3,
+        "readiness": 9,
+        "urgency": "medium",
+        "workflowType": "experiment",
+        "approved": true
+      }
+    }
+  ]
+}
