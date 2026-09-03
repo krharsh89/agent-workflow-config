@@ -11,4 +11,4 @@ Two independently credentialed transport workers submit typed budget requests to
 
 No request files are preinstalled. The existing support PR has already merged; preserve its authorization and receipt. Fresh work needs fresh work-item identities and deliberately chosen amounts. Installing these workers does not change a policy, budget, PR or receipt. Do not run them until both credentials and request files are configured.
 
-[Request contract](https://github.com/krharsh89/RuleRipple/blob/main/docs/request-intake.md) · [Credential security](https://github.com/krharsh89/RuleRipple/blob/main/docs/agent-connections.md)
+[RuleRipple overview](https://github.com/krharsh89/RuleRipple/blob/main/README.md) · [Security policy](https://github.com/krharsh89/RuleRipple/blob/main/SECURITY.md)
