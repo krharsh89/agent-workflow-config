@@ -1,0 +1,5 @@
+# Detailed documentation is retained locally, not published.
+*.[mM][dD]
+.env*
+*.pem
+*.key
