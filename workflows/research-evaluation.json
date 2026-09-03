@@ -1,0 +1,16 @@
+{
+  "schema_version": 1,
+  "workflow": {
+    "id": "research-evaluation",
+    "owner": "research",
+    "objective": "Evaluate candidate triage prompts against a non-sensitive regression dataset before deployment.",
+    "model_tier": "standard",
+    "credit_window": "daily",
+    "credit_limit": 1000
+  },
+  "execution_controls": {
+    "human_approval_required": true,
+    "audit_receipt_required": true,
+    "production_status": "proposed"
+  }
+}
