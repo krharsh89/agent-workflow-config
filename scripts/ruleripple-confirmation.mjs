@@ -13,7 +13,11 @@ export async function confirmAuthorization({ origin, credential, notificationId,
       catch { if (attempt < 2) { await pause(1000 * (attempt + 1)); continue; } throw new Error("RuleRipple confirmation could not be reached."); }
       if (method === "GET" && response.status === 404) return null;
       if ([409, 429, 502, 503, 504].includes(response.status) && attempt < 2) { await pause(1000 * (attempt + 1)); continue; }
-      if (!response.ok) throw new Error(`RuleRipple confirmation rejected (${response.status}).`);
+      if (!response.ok) {
+        const value = await response.json().catch(() => null);
+        const code = typeof value?.error === "string" && /^GITHUB_IDENTITY_(TOKEN|KEYS|SIGNATURE|AUDIENCE|TIME|WORKFLOW|RUN)$/.test(value.error) ? ` ${value.error}` : "";
+        throw new Error(`RuleRipple confirmation rejected (${response.status}, ${method}).${code}`);
+      }
       return response.json();
     }
   }
